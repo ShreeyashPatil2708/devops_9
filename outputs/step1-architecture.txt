@@ -1,0 +1,20 @@
+=== Command: kubectl get nodes -o wide ===
+NAME                        STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION             CONTAINER-RUNTIME
+assignment9-control-plane   Ready    control-plane   27s   v1.37.0   172.19.0.2    <none>        Debian GNU/Linux 13 (trixie)   6.12.76-linuxkit (arm64)   containerd://2.3.4
+
+=== Command: kubectl get pods -n kube-system -o wide ===
+NAME                                                READY   STATUS    RESTARTS   AGE   IP           NODE                        NOMINATED NODE   READINESS GATES
+coredns-559f6c778d-8lcbc                            1/1     Running   0          18s   10.244.0.3   assignment9-control-plane   <none>           <none>
+coredns-559f6c778d-fjtdr                            1/1     Running   0          18s   10.244.0.4   assignment9-control-plane   <none>           <none>
+etcd-assignment9-control-plane                      1/1     Running   0          25s   172.19.0.2   assignment9-control-plane   <none>           <none>
+kindnet-dbtzg                                       1/1     Running   0          18s   172.19.0.2   assignment9-control-plane   <none>           <none>
+kube-apiserver-assignment9-control-plane            1/1     Running   0          25s   172.19.0.2   assignment9-control-plane   <none>           <none>
+kube-controller-manager-assignment9-control-plane   1/1     Running   0          25s   172.19.0.2   assignment9-control-plane   <none>           <none>
+kube-proxy-vbcr4                                    1/1     Running   0          18s   172.19.0.2   assignment9-control-plane   <none>           <none>
+kube-scheduler-assignment9-control-plane            1/1     Running   0          25s   172.19.0.2   assignment9-control-plane   <none>           <none>
+
+=== Command: kubectl cluster-info ===
+Kubernetes control plane is running at https://127.0.0.1:50629
+CoreDNS is running at https://127.0.0.1:50629/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.

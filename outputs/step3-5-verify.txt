@@ -1,0 +1,10 @@
+NAME                                     READY   STATUS    RESTARTS   AGE   IP           NODE                        NOMINATED NODE   READINESS GATES
+pod/webrelease-webapp-545774697c-dk9rk   1/1     Running   0          21s   10.244.0.6   assignment9-control-plane   <none>           <none>
+pod/webrelease-webapp-545774697c-jrh9s   1/1     Running   0          21s   10.244.0.7   assignment9-control-plane   <none>           <none>
+pod/webrelease-webapp-545774697c-wp8jd   1/1     Running   0          21s   10.244.0.5   assignment9-control-plane   <none>           <none>
+
+NAME                                READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES      SELECTOR
+deployment.apps/webrelease-webapp   3/3     3            3           21s   webapp       httpd:2.4   app.kubernetes.io/instance=webrelease,app.kubernetes.io/name=webapp
+
+NAME                        TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/webrelease-webapp   ClusterIP   10.96.20.75   <none>        80/TCP    21s   app.kubernetes.io/instance=webrelease,app.kubernetes.io/name=webapp

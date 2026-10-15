@@ -1,0 +1,7 @@
+release "webrelease" uninstalled
+---helm list after uninstall---
+NAME	NAMESPACE	REVISION	UPDATED	STATUS	CHART	APP VERSION
+---kubectl get all after uninstall---
+NAME                                     READY   STATUS        RESTARTS   AGE
+pod/webrelease-webapp-545774697c-jrh9s   1/1     Terminating   0          61s
+pod/webrelease-webapp-545774697c-wp8jd   1/1     Terminating   0          61s

@@ -1,0 +1,8 @@
+51c51
+<   replicas: 3
+---
+>   replicas: 5
+68c68
+<           image: "httpd:2.4"
+---
+>           image: "httpd:2.4.62"

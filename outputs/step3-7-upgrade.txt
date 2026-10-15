@@ -1,0 +1,22 @@
+Release "webrelease" has been upgraded. Happy Helming!
+NAME: webrelease
+LAST DEPLOYED: Wed Oct 14 20:12:10 2026
+NAMESPACE: demo
+STATUS: deployed
+REVISION: 2
+DESCRIPTION: Upgrade complete
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace demo -l "app.kubernetes.io/name=webapp,app.kubernetes.io/instance=webrelease" -o jsonpath="{.items[0].metadata.name}")
+  export CONTAINER_PORT=$(kubectl get pod --namespace demo $POD_NAME -o jsonpath="{.spec.containers[0].ports[0].containerPort}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl --namespace demo port-forward $POD_NAME 8080:$CONTAINER_PORT
+deployment "webrelease-webapp" successfully rolled out
+---pods after upgrade---
+NAME                                 READY   STATUS        RESTARTS   AGE   IP           NODE                        NOMINATED NODE   READINESS GATES
+webrelease-webapp-545774697c-dk9rk   1/1     Terminating   0          41s   10.244.0.6   assignment9-control-plane   <none>           <none>
+webrelease-webapp-545774697c-jrh9s   1/1     Running       0          41s   10.244.0.7   assignment9-control-plane   <none>           <none>
+webrelease-webapp-545774697c-wp8jd   1/1     Running       0          41s   10.244.0.5   assignment9-control-plane   <none>           <none>
+NAME                                 READY   STATUS    RESTARTS   AGE   IP           NODE                        NOMINATED NODE   READINESS GATES
+webrelease-webapp-545774697c-jrh9s   1/1     Running   0          52s   10.244.0.7   assignment9-control-plane   <none>           <none>
+webrelease-webapp-545774697c-wp8jd   1/1     Running   0          52s   10.244.0.5   assignment9-control-plane   <none>           <none>
